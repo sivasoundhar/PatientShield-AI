@@ -5,6 +5,8 @@ pipeline of five coordinated agents de-identifies protected health information (
 structured clinical findings, indexes the de-identified text for retrieval, and answers questions
 about it with cited, grounded answers — with every decision logged to an auditable trail.
 
+![PatientShield AI demo: upload a document, run the 5-agent pipeline, review de-identified PHI side-by-side, ask a grounded question, and inspect the audit trail](assets/demo.gif)
+
 ---
 
 ## Aim & Goal
