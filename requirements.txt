@@ -1,0 +1,44 @@
+# PatientShield AI — dependencies, grouped by the day they're introduced.
+# Only Day 1 packages are installed for now; later groups are commented out
+# and get uncommented as each day's work begins ("do not build ahead" — CLAUDE.md section 2).
+
+# --- Day 1: Backend skeleton + database ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+pydantic==2.10.4
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+python-multipart==0.0.20   # required by FastAPI for UploadFile/form parsing
+pymupdf==1.25.1            # PDF text extraction (src/utils/pdf_parser.py)
+python-docx==1.1.2         # DOCX text extraction — needed for the PDF/DOCX/TXT input
+                            # scope in CLAUDE.md section 1; not in the section 13 "core
+                            # expected" list, flagging this addition per section 2.
+pytest==8.3.4
+pytest-asyncio==0.25.0
+httpx==0.28.1              # required by fastapi.testclient.TestClient
+
+# --- Day 2: LLM manager + LangGraph orchestrator ---
+langchain==0.3.13
+langgraph==0.2.60
+groq==0.13.1
+anthropic==0.42.0
+# httpx is already pinned in the Day 1 block above — reused directly for the Ollama HTTP call
+
+# --- Day 4: PHI Agent ---
+presidio-analyzer==2.2.357
+spacy==3.8.3
+# spaCy's own `en_core_web_sm` package isn't on PyPI under a plain version
+# pin — install via: pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+# (`python -m spacy download en_core_web_sm` also works but shells out to its
+# own requests session, which ignores pip's --cert flag — see Day 4 build
+# notes in PROGRESS.md for why the direct wheel URL is used instead here.)
+
+# --- Day 6: Knowledge Agent + UniRAG ---
+# chromadb==0.5.23
+# sentence-transformers==3.3.1
+# rank-bm25==0.2.2
+
+# --- Day 8-9: OCR for scanned documents, if needed ---
+# paddleocr==2.9.1
+# paddlepaddle==2.6.2

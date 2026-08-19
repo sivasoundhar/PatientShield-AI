@@ -1,0 +1,23 @@
+Patient: John Smith
+DOB: 03/15/1965
+MRN: 00482913
+Phone: (555) 123-4567
+
+Chief Complaint: Follow-up for Type 2 diabetes management.
+
+History of Present Illness:
+Mr. Smith is a 59-year-old male presenting for routine follow-up. He reports
+good adherence to metformin 500mg twice daily. Denies chest pain, denies
+shortness of breath. Blood glucose logs show fasting values 110-130 mg/dL.
+
+Assessment:
+1. Type 2 diabetes mellitus, well-controlled.
+2. Essential hypertension, stable on lisinopril 10mg daily.
+
+Plan:
+- Continue metformin 500mg BID.
+- Continue lisinopril 10mg daily.
+- Recheck HbA1c in 3 months.
+- Follow up in clinic on 11/20/2024.
+
+Dr. Sarah Johnson, MD

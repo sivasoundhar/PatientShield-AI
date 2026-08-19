@@ -1,0 +1,8 @@
+[project]
+name = "patientshield-ai"
+version = "0.1.0"
+description = "Multi-agent clinical document intelligence platform: PHI de-identification, clinical extraction, and cited Q&A over medical documents."
+requires-python = ">=3.11,<3.12"
+
+# Pytest configuration lives in pytest.ini (kept separate per CLAUDE.md's
+# explicit file list in section 4).

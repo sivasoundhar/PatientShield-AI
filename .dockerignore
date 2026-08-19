@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+data/
+medintel-ui/node_modules/
+medintel-ui/dist/
+.git/
+.gitignore
+README.md
+docs/

@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------
+ * Design tokens for PatientShield AI.
+ *
+ * Palette: deep navy sidebar (security/clinical trust) + a single
+ * indigo/violet accent reserved for AI-generated content and primary
+ * actions, so "this came from a model" reads as a distinct visual signal
+ * throughout the app, not just another button color. Status colors follow
+ * standard clinical-software convention (green=processed/success,
+ * amber=in-progress, red=failed/high-priority, blue=informational) so
+ * they're legible without relying on color alone (paired with icons/text
+ * everywhere they appear — never color as the only signal).
+ * --------------------------------------------------------------------- */
+:root {
+  --radius: 0.625rem;
+
+  --background: #ffffff;
+  --foreground: #0f1222;
+
+  --card: #ffffff;
+  --card-foreground: #0f1222;
+  --popover: #ffffff;
+  --popover-foreground: #0f1222;
+
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f0fb;
+  --secondary-foreground: #0f1222;
+
+  --muted: #f5f5f8;
+  --muted-foreground: #6b6f83;
+  --accent: #eef0ff;
+  --accent-foreground: #4f46e5;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #e6e6ec;
+  --input: #e6e6ec;
+  --ring: #4f46e5;
+
+  /* Semantic status colors — used consistently for processing_status and
+     PHI/clinical priority across every page. */
+  --status-success: #059669;
+  --status-success-bg: #ecfdf5;
+  --status-warning: #d97706;
+  --status-warning-bg: #fffbeb;
+  --status-danger: #dc2626;
+  --status-danger-bg: #fef2f2;
+  --status-info: #2563eb;
+  --status-info-bg: #eff6ff;
+
+  /* Sidebar gets its own token set — deep navy, distinct from the light
+     content area, matching the "security perimeter" visual metaphor. */
+  --sidebar: #0b1120;
+  --sidebar-foreground: #cbd0e6;
+  --sidebar-muted: #7c85a8;
+  --sidebar-border: #1c2333;
+  --sidebar-active-bg: #4f46e5;
+  --sidebar-active-fg: #ffffff;
+  --sidebar-hover-bg: #161d30;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-status-success: var(--status-success);
+  --color-status-success-bg: var(--status-success-bg);
+  --color-status-warning: var(--status-warning);
+  --color-status-warning-bg: var(--status-warning-bg);
+  --color-status-danger: var(--status-danger);
+  --color-status-danger-bg: var(--status-danger-bg);
+  --color-status-info: var(--status-info);
+  --color-status-info-bg: var(--status-info-bg);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-active-bg: var(--sidebar-active-bg);
+  --color-sidebar-active-fg: var(--sidebar-active-fg);
+  --color-sidebar-hover-bg: var(--sidebar-hover-bg);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+  }
+}

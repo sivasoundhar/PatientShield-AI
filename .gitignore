@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+.Python
+build/
+dist/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment secrets (committed template lives in .env.example)
+.env
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Data directory — uploads, chroma_db, ground truth, results are all
+# runtime/user artifacts, never source. See CLAUDE.md section 4.
+data/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Frontend (Day 3)
+medintel-ui/node_modules/
+medintel-ui/dist/
+medintel-ui/.env
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Claude Code local settings — machine-specific permission allowlist,
+# leaks local absolute paths/username, not meant to be shared/committed.
+.claude/settings.local.json
+
+# Internal AI-assisted-build docs — not for public disclosure.
+CLAUDE.md
+PROGRESS.md
+
+# Design reference images used while building the frontend — internal
+# build material, not for public disclosure.
+UI_ref/
+
+# Logs
+*.log

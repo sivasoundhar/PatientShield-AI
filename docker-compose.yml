@@ -1,0 +1,12 @@
+# Local dev stack. One service — no external DB/vector store containers
+# needed since SQLite and ChromaDB are both file-backed (section 3).
+services:
+  medintel-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env
+    environment:
+      - DATABASE_URL=sqlite:///./test.db
