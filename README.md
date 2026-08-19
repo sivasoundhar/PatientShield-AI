@@ -196,10 +196,22 @@ Visit `http://localhost:5173`.
 ### Optional: enable Chat / knowledge retrieval
 
 The Knowledge Agent indexes de-identified text to a separate hybrid-retrieval (BM25 + dense) RAG
-service and calls it for grounded Q&A. Point `UNIRAG_BASE_URL` in `.env` at a running instance of
-a compatible retrieval service. **Without it, PHI detection and clinical extraction still run
-fully** — only document indexing and `/chat` degrade to an honest "unavailable" response instead
-of failing the whole pipeline.
+service — [UniRAG](https://github.com/sivasoundhar/UniRAG) — and calls it for grounded Q&A. To
+enable Chat:
+
+```bash
+git clone https://github.com/sivasoundhar/UniRAG.git
+cd UniRAG
+python -m venv venv
+# Windows: venv\Scripts\activate      macOS/Linux: source venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --port 8001   # not 8000 — that's this project's own API
+```
+
+Then point `UNIRAG_BASE_URL=http://localhost:8001` in this project's `.env` (already the default
+in `.env.example`). **Without it, PHI detection and clinical extraction still run fully** — only
+document indexing and `/chat` degrade to an honest "unavailable" response instead of failing the
+whole pipeline.
 
 ### Running tests
 
